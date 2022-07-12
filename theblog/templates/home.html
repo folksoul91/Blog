@@ -1,29 +1,55 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<h1>Posts</h1>
+<h1 class="title-tag d-flex justify-content-center mb-5 my-5">The Ultimate blogging platform</h1>
 
-<ul>
-  {% for post in object_list %}
-  <li>
-    <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
-    - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
-    - {{ post.author.first_name }} 
-    {{ post.author.last_name }} -   
-    {{ post.post_date }} <small>
-      {% if user.is_authenticated %}
-        {% if user.id == post.author.id %}
+<ul class="m-0 p-0">
+  <div class="row">
+    {% for post in object_list %}
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 my-3">
+      <li>
+        <div class="card">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Card img" />
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <h6>
+              Category:
+              <a href="{% url 'category' post.category %}"
+                >{{ post.category }}</a
+              >
+            </h6>
+            <strong>
+              <p class="card-text">
+                {{ post.author.first_name }} {{ post.author.last_name }}
+              </p>
+            </strong>
+            <strong>
+              <small>
+                <small>
+                  <p class="card-text text-capitalize">{{ post.post_date }}</p>
+                </small>
+              </small>
+            </strong>
+            {{ post.body|slice:':50'|safe}}
+            <div class="d-flex justify-content-around">
+              <a href="{% url 'article-detail' post.pk %}" class="btn btn-dark"
+                >Read
+              </a>
+              {% if user.is_authenticated %} {% if user.id == post.author.id %}
+              <a href="{% url 'update_post' post.pk %}" class="btn btn-dark"
+                >Edit
+              </a>
 
-        - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-      
-        <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-        {% endif %}
-      {% endif %}
+              <a href="{% url 'delete_post' post.pk %}" class="btn btn-dark"
+                >Delete
+              </a>
 
-    </small> <br />
-    {{ post.body|slice:':250'|safe }}
-  </li>
-  {% endfor%}
+              {% endif %} {% endif %}
+            </div>
+          </div>
+        </div>
+      </li>
+    </div>
+    {% endfor %}
+  </div>
 </ul>
-
 {% endblock %}

@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.my-navbar {
+  background: #ffbb33;
+}
+.logo {
+  width: 77px;
+  color: #000 !important;
+  font-weight: 600;
+}
+.nav-link {
+  color: #000 !important;
+  font-weight: bold !important;
+  transition: all 0.5rem;
+  margin-right: 1rem;
+}
+.nav-link:hover {
+  transform: scale(1.05);
+  color: white !important;
+}
+li {
+  list-style-type: none !important;
+}
+.dropdown-menu {
+  background-color: white;
+}
+.dropdown-item:hover {
+  color: #000;
+  font-weight: bold;
+}

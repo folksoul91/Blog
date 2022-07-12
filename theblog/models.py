@@ -2,12 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
+from ckeditor.fields import RichTextField
+
 
 class Post(models.Model):
   title = models.CharField(max_length=255)
   title_tag = models.CharField(max_length=255)
   author = models.ForeignKey(User, on_delete=models.CASCADE)
-  body = models.TextField()
+  # body = models.TextField()
+  body = RichTextField(blank=True, null=True)
   post_date = models.DateField(auto_now_add=True)
   category = models.CharField(max_length=255, default='travel')
 
@@ -25,3 +28,9 @@ class Category(models.Model):
 
   def get_absolute_url(self):
     return reverse('home')
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"Photo for post_id: {self.post_id} @{self.url}"
