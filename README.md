@@ -21,7 +21,7 @@ UBlog is the ultimate blogging platform which allows users to share their ideas,
 
 Check out our deployed web application below:
 
-Deployed Website:
+Deployed Website:https://ublog-11.herokuapp.com/
 
 ![alt text](/image/main.png)
 
