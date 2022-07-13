@@ -21,7 +21,7 @@ UBlog is the ultimate blogging platform which allows users to share their ideas,
 
 Check out our deployed web application below:
 
-Deployed Website:https://funkyshoes.netlify.app/
+Deployed Website:
 
 ![alt text](/image/main.png)
 
@@ -59,11 +59,7 @@ Navigate throughout the page. Add items to the cart by clicking on the "ADD TO C
 
 For future improvements I will include...
 
-- Individually delete items from the user's cart
-- Add a specific quantity of an item
-- Add a rating system from our users
-- Add a order history for the users
-- Add a search content by categories
-- Add a navigation by category
-- Add a search bar to search for individual items
-- Add a functionality to sort items by price
+- Individually upload an image to a blog post
+- Add a like button 
+- Make the Category dropdown url case sensitive
+

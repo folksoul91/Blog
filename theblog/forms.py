@@ -1,10 +1,9 @@
 from django import forms
 from .models import Post, Category
 
-selections = Category.objects.all().values_list('name','name')
 
 selection_list = []
-
+selections = Category.objects.all().values_list('name','name')
 for item in selections:
   selection_list.append(item)
 
