@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'Blogs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blogs',
+        'NAME': 'blogs1',
     }
 }
 
