@@ -8,15 +8,6 @@ for item in selections:
   selection_list.append(item)
 
 class PostForm(forms.ModelForm):
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    selections = Category.objects.all().values_list('name', 'name')
-    selection_list = []
-
-    for item in selections:
-      selection_list.append(item)
-    self.fields['category'].selections = selection_list
-
   class Meta:
     model = Post
     fields = ('title', 'title_tag', 'author', 'category', 'body')
