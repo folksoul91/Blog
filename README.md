@@ -40,7 +40,7 @@ As a user, I want to write and post blogs, so that I can share my experiences wi
 
 ---
 
-Navigate throughout the page. Add items to the cart by clicking on the "ADD TO CART" button. If you no longer wish to purchase the items you had selected, simply click on the cart button from the header and click the trash can logo.
+You must register first in order to create and share any posts. 
 
 ## Technologies
 
