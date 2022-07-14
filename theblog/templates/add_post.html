@@ -4,7 +4,7 @@
 <h1>Add Post</h1>
 <br /><br />
 <div class="form-group">
-  <form method="POST" action="" enctype="multipart/form-data">
+  <form method="POST" action="{% url 'add_post' %}" enctype="multipart/form-data">
     {% csrf_token %} {{ form.media }} {{ form.as_p }}
     <button class="btn btn-secondary">Post</button>
     <input type="file" name="photo-file">

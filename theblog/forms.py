@@ -3,7 +3,7 @@ from .models import Post, Category
 
 
 selection_list = []
-selections = Category.objects.all().values_list()
+selections = Category.objects.all().values_list('name', 'name')
 for item in selections:
   selection_list.append(item)
 
